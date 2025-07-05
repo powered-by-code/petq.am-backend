@@ -16,15 +16,14 @@ pull-and-build-frontend: pull-frontend build-frontend
 
 
 backend-envs:
-# replace domain in env file
-	cp directus/.env.example directus/.env
+	cp directus/.env.example directus/.env && \
 	sed -i 's|PUBLIC_URL=.*|PUBLIC_URL="https://api.petq.am "|g' directus/.env
 	
-up:
+up-prod:
 	docker compose -f docker-compose.prod.yml up -d
 
 
 deploy-prod:
 	ssh instepanavan "cd ./petq.am-backend && make deploy"
 
-deploy: pull-and-build-frontend backend-envs up
+deploy: pull-and-build-frontend backend-envs up-prod
