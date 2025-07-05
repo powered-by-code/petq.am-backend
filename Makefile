@@ -16,8 +16,9 @@ pull-and-build-frontend: pull-frontend build-frontend
 
 
 backend-envs:
-	cp directus/.env.example directus/.env && \
-	sed -i 's|PUBLIC_URL=.*|PUBLIC_URL="https://api.petq.am "|g' directus/.env
+	cd directus && \
+	cp .env.example .env && \
+	sed -i 's|PUBLIC_URL=.*|PUBLIC_URL="https://api.petq.am "|g' .env
 	
 up-prod:
 	docker compose -f docker-compose.prod.yml up -d
