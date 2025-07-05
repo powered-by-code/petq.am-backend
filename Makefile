@@ -21,7 +21,7 @@ backend-envs:
 	sed -i 's|PUBLIC_URL=.*|PUBLIC_URL="https://api.petq.am "|g' .env
 	
 up-prod:
-	docker compose -f docker-compose.prod.yml up -d
+	docker compose -f docker-compose.prod.yaml up -d
 
 pull-backend:
 	git pull origin main
