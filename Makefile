@@ -17,6 +17,7 @@ pull-and-build-frontend: pull-frontend build-frontend
 
 backend-envs:
 # replace domain in env file
+	cp directus/.env.example directus/.env
 	sed -i 's|PUBLIC_URL=.*|PUBLIC_URL="https://api.petq.am "|g' directus/.env
 	
 up:
