@@ -23,8 +23,10 @@ backend-envs:
 up-prod:
 	docker compose -f docker-compose.prod.yml up -d
 
+pull-backend:
+	git pull origin main
 
 deploy-prod:
 	ssh instepanavan "cd ./petq.am-backend && make deploy"
 
-deploy: pull-and-build-frontend backend-envs up-prod
+deploy: pull-and-build-frontend pull-backend backend-envs up-prod
