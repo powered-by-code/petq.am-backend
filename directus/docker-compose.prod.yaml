@@ -86,8 +86,7 @@ services:
     image: petq.am
     restart: unless-stopped
     depends_on:
-      petq.am-backend:
-        condition: service_healthy
+      petq.am-backend
 
 networks:
   default:
