@@ -4,9 +4,9 @@ FRONTEND_REPO_URL = git@github.com:powered-by-code/haykakan-tsarayutyun-katalog.
 pull-frontend:
 	rm -rf frontend
 	git clone $(FRONTEND_REPO_URL) frontend
-	cd frontend && touch .env && \
-		echo "VITE_API_URL=https://petq.am" >> .env && \
-		echo VITE_GOOGLE_MAPS_API_KEY=AIzaSyCBoGOPqUUpogNny10_2Z7GL91E3XDCtAM >> .env
+	cd frontend && touch .env.local && \
+		echo "VITE_API_URL=https://petq.am" >> .env.local && \
+		echo VITE_GOOGLE_MAPS_API_KEY=AIzaSyCBoGOPqUUpogNny10_2Z7GL91E3XDCtAM >> .env.local
 
 build-frontend:
 	cd frontend && \
